@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black text-green-400">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black bg-opacity-80 text-green-400">
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
