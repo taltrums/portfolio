@@ -1,39 +1,40 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Layout from '../components/Layout'
 
 export default function About() {
   return (
-    <Layout>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center justify-center min-h-screen p-4"
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black text-green-400">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-2xl text-center"
       >
-        <div className="max-w-4xl mx-auto backdrop-blur-md bg-white/10 rounded-xl p-8 shadow-lg">
-          <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-            About Me
-          </h2>
-          <p className="text-gray-300 mb-6">
-            Hello! I'm [Your Name], a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With [X] years of experience in the field, I've had the opportunity to work on a wide range of projects, from small business websites to large-scale web applications.
-          </p>
-          <p className="text-gray-300 mb-6">
-            My approach to web development is holistic – I believe in creating solutions that not only look great but also perform exceptionally. I'm constantly learning and staying up-to-date with the latest technologies and best practices in the ever-evolving world of web development.
-          </p>
-          <p className="text-gray-300 mb-6">
-            When I'm not coding, you can find me [Your Hobbies or Interests]. I believe that a well-rounded life fuels creativity and problem-solving skills, which I bring to every project I work on.
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
+        <h1 className="text-5xl font-bold mb-4 text-green-500 font-mono">About Me</h1>
+        <p className="mb-4 text-lg font-mono">
+          Hello! I&apos;m Mohd Talha, a passionate web developer with a keen interest in creating robust and scalable web applications.
+        </p>
+        <p className="mb-4 text-lg font-mono">
+          My journey in tech began with a fascination for how things work behind the scenes. This curiosity led me to dive deep into the world of web development, where I&apos;ve honed my skills in various technologies and best practices.
+        </p>
+        <p className="mb-4 text-lg font-mono">
+          When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and tech talks.
+        </p>
+        <p className="mb-8 text-lg font-mono">
+          Let&apos;s connect and build something amazing together!
+        </p>
+        <Link href="/" passHref>
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: '#1a4731' }}
             whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 bg-green-800 text-green-300 rounded-md hover:bg-green-700 transition-colors shadow-lg hover:shadow-green-500/50 font-mono border border-green-500"
           >
-            <Link href="/skills" className="inline-block px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg hover:shadow-purple-500/50">
-              View My Skills
-            </Link>
-          </motion.div>
-        </div>
-      </motion.div>
-    </Layout>
+            &lt;Back_to_Home /&gt;
+          </motion.button>
+        </Link>
+      </motion.section>
+    </div>
   )
 }
