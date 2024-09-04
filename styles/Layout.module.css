@@ -1,0 +1,13 @@
+.hackerBackground {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 75%, rgba(0,0,0,1) 100%), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQYV2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXQdISfAAAAAElFTkSuQmCC");
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 4px 4px;
+  }
+}
