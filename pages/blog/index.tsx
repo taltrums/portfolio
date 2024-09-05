@@ -26,7 +26,7 @@ export default function Blog() {
               <h2 className="text-2xl font-bold mb-2 text-green-300 font-mono">{post.title}</h2>
               <p className="text-green-400 mb-2">{post.date}</p>
               <p className="text-green-400 mb-4">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} passHref>
+              <Link href={`/blog/${post.slug}`} key={post.id}>
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: '#1a4731' }}
                   whileTap={{ scale: 0.95 }}
