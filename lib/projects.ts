@@ -16,8 +16,8 @@ export const projects: Project[] = [
     description: "A full-stack e-commerce platform built with Next.js and Stripe integration.",
     image: "https://via.placeholder.com/300x200",
     technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-    githubUrl: "https://github.com/yourusername/e-commerce-platform",
-    liveUrl: "https://e-commerce-platform-demo.vercel.app",
+    githubUrl: "https://github.com/taltrums/ecommerce-app",
+    liveUrl: "https://taltrums-ecommerce.fly.dev/",
     slug: "e-commerce-platform", // Add this line
   },
   {
