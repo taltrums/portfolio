@@ -8,9 +8,11 @@ export default function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
+  const [isError, setIsError] = useState(false)  // New state for error handling
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsError(false)  // Reset error state on new submission
     try {
       const result = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -26,7 +28,8 @@ export default function Contact() {
       setTimeout(() => setIsSuccess(false), 5000) // Hide success message after 5 seconds
     } catch (error) {
       console.error(error)
-      // Handle error (e.g., show an error message)
+      setIsError(true)  // Set error state to true
+      setTimeout(() => setIsError(false), 5000) // Hide error message after 5 seconds
     }
   }
 
@@ -48,6 +51,15 @@ export default function Contact() {
             className="mb-4 p-3 bg-green-900 text-green-300 rounded-md font-mono"
           >
             Message sent successfully!
+          </motion.div>
+        )}
+        {isError && (  // Display error message
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-4 p-3 bg-red-900 text-red-300 rounded-md font-mono"
+          >
+            Failed to send message. Please try again.
           </motion.div>
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
